@@ -1,0 +1,16 @@
+<% layout = 'layout' %>
+<h1 class="text-center mb-4">Welcome to Laki Treasure Trove</h1>
+<a href="/create" class="btn btn-success mb-4">Create New Post</a>
+<div class="row">
+    <% posts.forEach(post => { %>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><%= post.title %></h5>
+                    <p class="card-text"><%= post.content.substring(0, 100) %>...</p>
+                    <a href="/post/<%= post._id %>" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+</div>
